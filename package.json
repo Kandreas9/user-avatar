@@ -1,0 +1,14 @@
+{
+	"name": "web-component",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "esbuild ./src/index.js --bundle --outfile=./dist/index.js --sourcemap --watch"
+	},
+	"author": "Smor",
+	"license": "ISC",
+	"dependencies": {
+		"esbuild": "^0.12.15"
+	}
+}
