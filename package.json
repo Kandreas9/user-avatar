@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build": "esbuild ./src/index.js --bundle --outfile=./dist/index.js --sourcemap --watch"
+		"build": "esbuild ./src/Avatar.js --bundle --outfile=./dist/avatar.js --sourcemap --watch"
 	},
 	"author": "Smor",
 	"license": "ISC",
