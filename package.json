@@ -1,10 +1,10 @@
 {
-	"name": "web-component",
+	"name": "user-avatar-web-component",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build": "esbuild ./src/Avatar.js --bundle --outfile=./dist/avatar.js --sourcemap --watch"
+		"build": "esbuild ./src/UserAvatar.js --bundle --outfile=./dist/user-avatar.js --minify --sourcemap"
 	},
 	"author": "Smor",
 	"license": "ISC",

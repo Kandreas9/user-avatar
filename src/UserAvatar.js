@@ -1,4 +1,4 @@
-class Avatar extends HTMLElement {
+class UserAvatar extends HTMLElement {
 	constructor() {
 		super();
 
@@ -59,9 +59,8 @@ class Avatar extends HTMLElement {
 		return ["src"];
 	}
 
-	attributeChangedCallback(name, oldValue, newValue) {
+	attributeChangedCallback(name, _oldValue, newValue) {
 		if (name !== "src") return;
-		console.log({ name, oldValue, newValue });
 
 		const img = this.shadowRoot.querySelector(".user-avatar img");
 
@@ -69,4 +68,4 @@ class Avatar extends HTMLElement {
 	}
 }
 
-customElements.define("user-avatar", Avatar);
+customElements.define("user-avatar", UserAvatar);
