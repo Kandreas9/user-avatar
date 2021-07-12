@@ -7,7 +7,9 @@ class UserAvatar extends HTMLElement {
 		this.size = this.hasAttribute("size")
 			? this.getAttribute("size")
 			: "100";
-		this.src = this.hasAttribute("src") ? this.getAttribute("src") : "";
+		this.src = this.hasAttribute("src")
+			? this.getAttribute("src")
+			: "https://raw.githubusercontent.com/Kandreas9/user-avatar/2484672f0dec2aa663ef05de1664b9679f88e64d/src/assets/avatar-placeholder.svg";
 
 		const template = document.createElement("template");
 		template.innerHTML = `
