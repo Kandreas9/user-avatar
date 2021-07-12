@@ -7,9 +7,7 @@ class UserAvatar extends HTMLElement {
 		this.size = this.hasAttribute("size")
 			? this.getAttribute("size")
 			: "100";
-		this.src = this.hasAttribute("src")
-			? this.getAttribute("src")
-			: "https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg";
+		this.src = this.hasAttribute("src") ? this.getAttribute("src") : "";
 
 		const template = document.createElement("template");
 		template.innerHTML = `
