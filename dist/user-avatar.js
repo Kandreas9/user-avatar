@@ -1,4 +1,4 @@
-(()=>{var i=class extends HTMLElement{constructor(){super();let e=this.attachShadow({mode:"open"});this.size=this.hasAttribute("size")?this.getAttribute("size"):"100",this.src=this.hasAttribute("src")?this.getAttribute("src"):"https://www.nacdnet.org/wp-content/uploads/2016/06/person-placeholder.jpg";let s=document.createElement("template");s.innerHTML=`
+(()=>{var c=class extends HTMLElement{constructor(){super();let e=this.attachShadow({mode:"open"}),r="https://raw.githubusercontent.com/Kandreas9/user-avatar/2484672f0dec2aa663ef05de1664b9679f88e64d/src/assets/avatar-placeholder.svg";this.size=this.hasAttribute("size")?this.getAttribute("size"):"100",this.src=this.getAttribute("src"),this.src||(this.src=r);let t=document.createElement("template");t.innerHTML=`
             <style>
                 .user-avatar {
                     border-radius: 50%;
@@ -17,8 +17,8 @@
             </style>
 
             <div class='user-avatar' >
-                <input type='file'>
+                <input type='file' accept="image/*">
                 <img src='${this.src}' alt='avatar image' >
             </div>
-            `,e.appendChild(s.content.cloneNode(!0));let a=this.shadowRoot.querySelector(".user-avatar"),t=this.shadowRoot.querySelector(".user-avatar input");a.addEventListener("click",()=>{t.click()}),t.addEventListener("change",()=>{let r=t.files[0],n=URL.createObjectURL(r);document.querySelector("user-avatar").setAttribute("src",n),this.dispatchEvent(new CustomEvent("upload",{detail:r}))})}static get observedAttributes(){return["src"]}attributeChangedCallback(e,s,a){if(e!=="src")return;let t=this.shadowRoot.querySelector(".user-avatar img");t.src=a}};customElements.define("user-avatar",i);})();
+            `,e.appendChild(t.content.cloneNode(!0));let s=this.shadowRoot.querySelector(".user-avatar"),a=this.shadowRoot.querySelector(".user-avatar input");s.addEventListener("click",()=>{a.click()}),a.addEventListener("change",()=>{let i=a.files[0],n=URL.createObjectURL(i);document.querySelector("user-avatar").setAttribute("src",n),this.dispatchEvent(new CustomEvent("upload",{detail:i}))})}static get observedAttributes(){return["src"]}attributeChangedCallback(e,r,t){if(e!=="src"||!t)return;let s=this.shadowRoot.querySelector(".user-avatar img");s.src=t}};customElements.define("user-avatar",c);})();
 //# sourceMappingURL=user-avatar.js.map
