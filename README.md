@@ -26,6 +26,14 @@ A simple and light web component for creating a user avatar.
 </body>
 ```
 
+- The web component sets out a custom event called `upload` whenever a user inputs a file which you can listen to and get the file to upload to a database
+
+```js
+document.querySelector('user-avatar').addEventListener('upload', (e) => {
+    console.log(e.detail) //detail contains the inputed file
+})
+```
+
 ## Attributes
 
 `size` - Default is 100 pixels, but you can add any number.

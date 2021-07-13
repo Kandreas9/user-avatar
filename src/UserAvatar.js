@@ -3,13 +3,17 @@ class UserAvatar extends HTMLElement {
 		super();
 
 		const shadow = this.attachShadow({ mode: "open" });
+		const placeholder =
+			"https://raw.githubusercontent.com/Kandreas9/user-avatar/2484672f0dec2aa663ef05de1664b9679f88e64d/src/assets/avatar-placeholder.svg";
 
 		this.size = this.hasAttribute("size")
 			? this.getAttribute("size")
 			: "100";
-		this.src = this.hasAttribute("src")
-			? this.getAttribute("src")
-			: "https://raw.githubusercontent.com/Kandreas9/user-avatar/2484672f0dec2aa663ef05de1664b9679f88e64d/src/assets/avatar-placeholder.svg";
+		this.src = this.getAttribute("src");
+
+		if (!this.src) {
+			this.src = placeholder;
+		}
 
 		const template = document.createElement("template");
 		template.innerHTML = `
@@ -31,7 +35,7 @@ class UserAvatar extends HTMLElement {
             </style>
 
             <div class='user-avatar' >
-                <input type='file'>
+                <input type='file' accept="image/*">
                 <img src='${this.src}' alt='avatar image' >
             </div>
             `;
@@ -60,7 +64,7 @@ class UserAvatar extends HTMLElement {
 	}
 
 	attributeChangedCallback(name, _oldValue, newValue) {
-		if (name !== "src") return;
+		if (name !== "src" || !newValue) return;
 
 		const img = this.shadowRoot.querySelector(".user-avatar img");
 
