@@ -40,12 +40,17 @@ document.querySelector('user-avatar').addEventListener('upload', (e) => {
 
 `src` - This attribute can be used to add a default image, before the user inputs their image. Without this attribute a default placeholder image will be placed
 
+`shape` 
+- circle (default)
+- hexagon 
+
 ## Full Example
 
 ```html
 <body>
     <user-avatar
         size='200'
+        shape='hexagon'
         src='https://images.unsplash.com/photo-1615798763618-183906cd14b2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1789&q=80'
     ></user-avatar>
 
@@ -56,4 +61,4 @@ document.querySelector('user-avatar').addEventListener('upload', (e) => {
 
 [logo]: https://img.shields.io/static/v1?label=CDN&message=jsDelivr&color=%23ff5626&logo=jsDelivr&logoColor=%23ff5626
 [jsDelivr]: https://cdn.jsdelivr.net/gh/Kandreas9/user-avatar@main/dist/user-avatar.js
-[showcase]: https://raw.githubusercontent.com/Kandreas9/user-avatar/main/src/assets/showcase.png
+[showcase]: https://raw.githubusercontent.com/Kandreas9/user-avatar/main/src/assets/showcase-new.png
