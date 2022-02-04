@@ -10,6 +10,9 @@ class UserAvatar extends HTMLElement {
 			? this.getAttribute("size")
 			: "100";
 		this.src = this.getAttribute("src");
+		this.shape = this.hasAttribute("shape")
+			? this.getAttribute("shape")
+			: "circle";
 
 		if (!this.src) {
 			this.src = placeholder;
@@ -19,22 +22,30 @@ class UserAvatar extends HTMLElement {
 		template.innerHTML = `
             <style>
                 .user-avatar {
-                    border-radius: 50%;
                     overflow: hidden;
-                    height: ${this.size}px;
-                    width: ${this.size}px;
                     display: flex;
                     justify-content: center;
 
                 }
 
-                .user-avatar input {
+				.user-avatar input {
                     display: none;
                 }
 
+				.circle {
+					border-radius: 50%;
+					height: ${this.size}px;
+                    width: ${this.size}px;
+				}
+
+				.hexagon {
+					clip-path: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+					height:${this.size}px;
+                    width: ${this.size * 0.8660254}px;
+				}
             </style>
 
-            <div class='user-avatar' >
+            <div class='user-avatar ${this.shape}' >
                 <input type='file' accept="image/*">
                 <img src='${this.src}' alt='avatar image' >
             </div>

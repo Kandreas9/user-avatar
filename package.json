@@ -1,7 +1,6 @@
 {
 	"name": "user-avatar",
-	"version": "1.0.0",
-	"description": "",
+	"private": "true",
 	"main": "index.js",
 	"scripts": {
 		"build": "esbuild ./src/UserAvatar.js --bundle --outfile=./dist/user-avatar.js --minify --sourcemap"
